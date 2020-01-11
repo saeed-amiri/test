@@ -33,7 +33,6 @@ int main ()
     rowloop++;
   }
   
-  //printf("%i\n",arr[1][0]);
   fclose(fp);
     
   for(irow=0;irow<rows;irow++)
