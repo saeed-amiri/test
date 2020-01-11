@@ -13,21 +13,21 @@ int main ()
   int columns=5,rows=6;
   
   int **arr=(int**)malloc(rows*sizeof(int*));
-  for(irow = 0;irow<rows;irow++) arr[irow]=(int*)malloc(columns*sizeof(int));
+  for(irow=0;irow<rows;irow++) arr[irow]=(int*)malloc(columns*sizeof(int));
   
-  for(irow=0;irow<rows;irow++)for(icol=0;icol<columns;icol++)arr[irow][icol]=0;
+  for(irow=0;irow<rows;irow++) for(icol=0;icol<columns;icol++)arr[irow][icol]=0;
 
-  fp = fopen("data","r");
+  fp=fopen("data","r");
 
   int rowloop=0;
   while (fgets(str,sizeof(str),fp)!=NULL)
   {
-    pch = strtok_r(str," \n",&state);
+    pch=strtok_r(str," \n",&state);
     int colloop=0;
-    while (pch != NULL)
+    while(pch != NULL)
     {
       arr[rowloop][colloop]=atoi(pch);
-      pch = strtok_r(NULL," .,",&state);
+      pch=strtok_r(NULL," .,\t-_",&state);
       colloop++;
     }
     rowloop++;
@@ -36,9 +36,9 @@ int main ()
   //printf("%i\n",arr[1][0]);
   fclose(fp);
     
-  for (irow=0;irow<rows;irow++)
+  for(irow=0;irow<rows;irow++)
   {
-    for (icol = 0;icol<columns;icol++) printf("%i ",arr[irow][icol]);
+    for(icol=0;icol<columns;icol++) printf("%i ",arr[irow][icol]);
     printf("\n");
   }
   
