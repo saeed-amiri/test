@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+//http://www.cplusplus.com/reference/cstring/strtok/
+//https://www.mkssoftware.com/docs/man3/strtok_r.3.asp
+//https://stackoverflow.com/questions/10711277/reading-columns-from-a-text-file-in-c
 int main ()
 {
   char str[1024];
